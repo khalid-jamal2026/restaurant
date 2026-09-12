@@ -1,0 +1,685 @@
+/* ================================
+   إعدادات عامة
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: rgb(10, 17, 40);
+    color: wheat;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ================================
+   رأس الصفحة
+================================ */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgb(10, 17, 40);
+
+    border-bottom: 1px solid rgba(245, 222, 179, 0.1);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: orange;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: wheat;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: orange;
+}
+
+.order-btn {
+    background: orange;
+    color: rgb(10, 17, 40);
+
+    padding: 10px 20px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    background: wheat;
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   Hero العروض
+================================ */
+
+.offers-hero {
+    min-height: 400px;
+
+    background:
+        linear-gradient(
+            rgba(10, 17, 40, 0.7),
+            rgba(10, 17, 40, 0.88)
+        ),
+        url("../images/offers/family-offer.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.offers-hero-content {
+    max-width: 750px;
+    padding: 30px;
+}
+
+.offers-hero h1 {
+    font-size: 50px;
+    margin: 0 0 15px;
+}
+
+.offers-hero p {
+    color: rgba(245, 222, 179, 0.85);
+    font-size: 19px;
+}
+
+
+/* ================================
+   قسم العروض
+================================ */
+
+.offers-section {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 90px 30px;
+}
+
+.section-heading {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 50px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    margin: 0 0 15px;
+}
+
+.section-heading p {
+    color: rgba(245, 222, 179, 0.7);
+}
+
+
+/* ================================
+   بطاقات العروض
+================================ */
+
+.offers-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.offer-card {
+    background: rgb(18, 28, 58);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(245, 222, 179, 0.08);
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(255, 165, 0, 0.5);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.offer-card-image {
+    position: relative;
+}
+
+.offer-card-image img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+}
+
+.offer-badge {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    background: orange;
+    color: rgb(10, 17, 40);
+
+    padding: 7px 15px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.offer-card-content {
+    padding: 25px;
+}
+
+.offer-card-content h3 {
+    font-size: 24px;
+
+    margin: 0 0 12px;
+}
+
+.offer-card-content p {
+    color: rgba(245, 222, 179, 0.7);
+
+    margin-bottom: 20px;
+}
+
+.offer-list {
+    margin-bottom: 25px;
+}
+
+.offer-list li {
+    margin-bottom: 10px;
+
+    color: rgba(245, 222, 179, 0.85);
+}
+
+.offer-list li::before {
+    content: "✓";
+
+    color: orange;
+
+    font-weight: bold;
+
+    margin-left: 8px;
+}
+
+
+/* ================================
+   الأسعار
+================================ */
+
+.offer-price {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.old-price {
+    color: rgba(245, 222, 179, 0.4);
+
+    text-decoration: line-through;
+
+    font-size: 16px;
+}
+
+.new-price {
+    color: orange;
+
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+.offer-btn {
+    display: block;
+
+    width: 100%;
+
+    background: orange;
+
+    color: rgb(10, 17, 40);
+
+    text-align: center;
+
+    padding: 12px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.offer-btn:hover {
+    background: wheat;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   العرض المميز
+================================ */
+
+.special-offer {
+    max-width: 1200px;
+
+    margin: 0 auto 90px;
+
+    padding: 60px 40px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            rgba(10, 17, 40, 0.75),
+            rgba(10, 17, 40, 0.85)
+        ),
+        url("../images/offers/friends-offer.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+}
+
+.special-offer h2 {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.special-offer p {
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+
+    color: rgba(245, 222, 179, 0.8);
+}
+
+.special-btn {
+    display: inline-block;
+
+    background: orange;
+
+    color: rgb(10, 17, 40);
+
+    padding: 13px 30px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.special-btn:hover {
+    background: wheat;
+
+    transform: translateY(-3px);
+}
+
+
+/* ================================
+   لماذا تختار عروض مذاق؟
+================================ */
+
+.offer-benefits {
+    background: rgb(13, 22, 48);
+
+    padding: 80px 30px;
+}
+
+.benefits-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.benefit-card {
+    text-align: center;
+
+    padding: 30px 20px;
+}
+
+.benefit-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 165, 0, 0.12);
+
+    color: orange;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 28px;
+}
+
+.benefit-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.benefit-card p {
+    color: rgba(245, 222, 179, 0.65);
+}
+
+
+/* ================================
+   Call To Action
+================================ */
+
+.offers-cta {
+    padding: 90px 30px;
+
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+.cta-content h2 {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.cta-content p {
+    color: rgba(245, 222, 179, 0.75);
+
+    margin-bottom: 25px;
+}
+
+.main-btn {
+    display: inline-block;
+
+    background: orange;
+
+    color: rgb(10, 17, 40);
+
+    padding: 13px 30px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background: wheat;
+
+    transform: translateY(-3px);
+}
+
+
+/* ================================
+   Footer
+================================ */
+
+footer {
+    background: rgb(7, 12, 29);
+
+    padding: 50px 30px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer-logo {
+    color: orange;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: rgba(245, 222, 179, 0.65);
+}
+
+footer h3 {
+    color: wheat;
+
+    margin-bottom: 15px;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: rgba(245, 222, 179, 0.7);
+
+    transition: 0.3s;
+}
+
+footer ul li a:hover {
+    color: orange;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+
+    margin: 40px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(245, 222, 179, 0.1);
+
+    text-align: center;
+}
+
+
+/* ================================
+   الأجهزة اللوحية
+================================ */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .offers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefits-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* ================================
+   الجوال
+================================ */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 15px 20px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .order-btn {
+        display: none;
+    }
+
+    .offers-hero {
+        min-height: 320px;
+    }
+
+    .offers-hero h1 {
+        font-size: 35px;
+    }
+
+    .offers-hero p {
+        font-size: 16px;
+    }
+
+    .offers-section {
+        padding: 60px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offer-card-image img {
+        height: 230px;
+    }
+
+    .special-offer {
+        margin: 0 20px 60px;
+
+        padding: 45px 20px;
+    }
+
+    .special-offer h2 {
+        font-size: 30px;
+    }
+
+    .offer-benefits {
+        padding: 60px 20px;
+    }
+
+    .benefits-container {
+        grid-template-columns: 1fr;
+    }
+
+    .offers-cta {
+        padding: 60px 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 30px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+}

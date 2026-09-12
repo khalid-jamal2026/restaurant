@@ -1,0 +1,759 @@
+/* ================================
+   إعدادات عامة
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: rgb(10, 17, 40);
+    color: wheat;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ================================
+   رأس الصفحة
+================================ */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgb(10, 17, 40);
+
+    border-bottom: 1px solid rgba(245, 222, 179, 0.1);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: orange;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: wheat;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: orange;
+}
+
+.order-btn {
+    background: orange;
+    color: rgb(10, 17, 40);
+
+    padding: 10px 20px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    background: wheat;
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   Hero التواصل
+================================ */
+
+.contact-hero {
+    min-height: 400px;
+
+    background:
+        linear-gradient(
+            rgba(10, 17, 40, 0.7),
+            rgba(10, 17, 40, 0.88)
+        ),
+        url("../images/about/restaurant.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.contact-hero-content {
+    max-width: 750px;
+    padding: 30px;
+}
+
+.contact-hero h1 {
+    font-size: 50px;
+    margin: 0 0 15px;
+}
+
+.contact-hero p {
+    color: rgba(245, 222, 179, 0.85);
+    font-size: 19px;
+}
+
+
+/* ================================
+   قسم التواصل
+================================ */
+
+.contact-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 90px 30px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+
+/* ================================
+   معلومات التواصل
+================================ */
+
+.contact-info {
+    padding-top: 10px;
+}
+
+.section-small-title {
+    color: orange;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.contact-info h2 {
+    font-size: 38px;
+
+    margin: 0 0 15px;
+}
+
+.contact-info > p {
+    color: rgba(245, 222, 179, 0.7);
+
+    margin-bottom: 30px;
+}
+
+.contact-items {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    background: rgb(18, 28, 58);
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(245, 222, 179, 0.08);
+
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateX(-5px);
+
+    border-color: rgba(255, 165, 0, 0.5);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 165, 0, 0.12);
+
+    color: orange;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+}
+
+.contact-item h3 {
+    margin: 0 0 4px;
+
+    font-size: 18px;
+}
+
+.contact-item p {
+    margin: 0;
+
+    color: rgba(245, 222, 179, 0.65);
+}
+
+
+/* ================================
+   نموذج التواصل
+================================ */
+
+.contact-form-container {
+    background: rgb(18, 28, 58);
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(245, 222, 179, 0.08);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-container h2 {
+    font-size: 30px;
+
+    margin: 0 0 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: wheat;
+
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background: rgb(10, 17, 40);
+
+    color: wheat;
+
+    border: 1px solid rgba(245, 222, 179, 0.15);
+
+    border-radius: 6px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: orange;
+
+    box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.1);
+}
+
+.form-group textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(245, 222, 179, 0.4);
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.submit-btn {
+    width: 100%;
+
+    border: none;
+
+    background: orange;
+
+    color: rgb(10, 17, 40);
+
+    padding: 14px;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: wheat;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   الخريطة
+================================ */
+
+.map-section {
+    background: rgb(13, 22, 48);
+
+    padding: 80px 30px;
+}
+
+.map-container {
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+.map-heading {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.map-heading h2 {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.map-heading p {
+    color: rgba(245, 222, 179, 0.7);
+}
+
+.map-box {
+    width: 100%;
+
+    height: 400px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            rgba(10, 17, 40, 0.75),
+            rgba(10, 17, 40, 0.85)
+        );
+
+    border: 1px solid rgba(245, 222, 179, 0.1);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+.map-content {
+    padding: 20px;
+}
+
+.map-content .map-icon {
+    font-size: 45px;
+
+    color: orange;
+
+    margin-bottom: 15px;
+}
+
+.map-content h3 {
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+.map-content p {
+    color: rgba(245, 222, 179, 0.65);
+}
+
+
+/* ================================
+   الأسئلة الشائعة
+================================ */
+
+.faq-section {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 90px 30px;
+}
+
+.faq-heading {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.faq-heading h2 {
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+.faq-heading p {
+    color: rgba(245, 222, 179, 0.7);
+}
+
+.faq-item {
+    background: rgb(18, 28, 58);
+
+    padding: 22px 25px;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(245, 222, 179, 0.08);
+
+    transition: 0.3s;
+}
+
+.faq-item:hover {
+    border-color: rgba(255, 165, 0, 0.4);
+}
+
+.faq-item h3 {
+    color: orange;
+
+    font-size: 19px;
+
+    margin: 0 0 8px;
+}
+
+.faq-item p {
+    color: rgba(245, 222, 179, 0.65);
+
+    margin: 0;
+}
+
+
+/* ================================
+   CTA
+================================ */
+
+.contact-cta {
+    padding: 90px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(10, 17, 40, 0.8),
+            rgba(10, 17, 40, 0.9)
+        ),
+        url("../images/about/restaurant.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.cta-content {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+.cta-content h2 {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.cta-content p {
+    color: rgba(245, 222, 179, 0.75);
+
+    margin-bottom: 25px;
+}
+
+.main-btn {
+    display: inline-block;
+
+    background: orange;
+
+    color: rgb(10, 17, 40);
+
+    padding: 13px 30px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background: wheat;
+
+    transform: translateY(-3px);
+}
+
+
+/* ================================
+   Footer
+================================ */
+
+footer {
+    background: rgb(7, 12, 29);
+
+    padding: 50px 30px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer-logo {
+    color: orange;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: rgba(245, 222, 179, 0.65);
+}
+
+footer h3 {
+    color: wheat;
+
+    margin-bottom: 15px;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: rgba(245, 222, 179, 0.7);
+
+    transition: 0.3s;
+}
+
+footer ul li a:hover {
+    color: orange;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+
+    margin: 40px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(245, 222, 179, 0.1);
+
+    text-align: center;
+}
+
+
+/* ================================
+   الأجهزة اللوحية
+================================ */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* ================================
+   الجوال
+================================ */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 15px 20px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .order-btn {
+        display: none;
+    }
+
+    .contact-hero {
+        min-height: 320px;
+    }
+
+    .contact-hero h1 {
+        font-size: 35px;
+    }
+
+    .contact-hero p {
+        font-size: 16px;
+    }
+
+    .contact-section {
+        padding: 60px 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 30px;
+    }
+
+    .contact-form-container {
+        padding: 25px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .map-section {
+        padding: 60px 20px;
+    }
+
+    .map-heading h2 {
+        font-size: 30px;
+    }
+
+    .map-box {
+        height: 300px;
+    }
+
+    .faq-section {
+        padding: 60px 20px;
+    }
+
+    .faq-heading h2 {
+        font-size: 30px;
+    }
+
+    .contact-cta {
+        padding: 60px 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 30px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+}

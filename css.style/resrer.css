@@ -1,0 +1,666 @@
+/* ================================
+   إعدادات عامة
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: rgb(10, 17, 40);
+    color: wheat;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ================================
+   رأس الصفحة
+================================ */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgb(10, 17, 40);
+
+    border-bottom: 1px solid rgba(245, 222, 179, 0.1);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: orange;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: wheat;
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: orange;
+}
+
+.order-btn {
+    background: orange;
+    color: rgb(10, 17, 40);
+
+    padding: 10px 20px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    background: wheat;
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   Hero الحجز
+================================ */
+
+.reservation-hero {
+    min-height: 400px;
+
+    background:
+        linear-gradient(
+            rgba(10, 17, 40, 0.7),
+            rgba(10, 17, 40, 0.88)
+        ),
+        url("../images/about/restaurant.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.reservation-hero-content {
+    max-width: 750px;
+    padding: 30px;
+}
+
+.reservation-hero h1 {
+    font-size: 50px;
+    margin: 0 0 15px;
+}
+
+.reservation-hero p {
+    color: rgba(245, 222, 179, 0.85);
+    font-size: 19px;
+}
+
+
+/* ================================
+   قسم الحجز
+================================ */
+
+.reservation-section {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 90px 30px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+/* ================================
+   صورة المطعم
+================================ */
+
+.reservation-image img {
+    width: 100%;
+    height: 600px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ================================
+   نموذج الحجز
+================================ */
+
+.reservation-form-container {
+    background: rgb(18, 28, 58);
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(245, 222, 179, 0.08);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.section-small-title {
+    color: orange;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.reservation-form-container h2 {
+    font-size: 35px;
+
+    margin: 0 0 10px;
+}
+
+.reservation-form-container > p {
+    color: rgba(245, 222, 179, 0.7);
+
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   الحقول
+================================ */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: wheat;
+
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background: rgb(10, 17, 40);
+
+    color: wheat;
+
+    border: 1px solid rgba(245, 222, 179, 0.15);
+
+    border-radius: 6px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: orange;
+
+    box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.1);
+}
+
+.form-group textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(245, 222, 179, 0.4);
+}
+
+
+/* ================================
+   زر تأكيد الحجز
+================================ */
+
+.submit-btn {
+    width: 100%;
+
+    border: none;
+
+    background: orange;
+
+    color: rgb(10, 17, 40);
+
+    padding: 14px;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: wheat;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   معلومات المطعم
+================================ */
+
+.reservation-info {
+    background: rgb(13, 22, 48);
+
+    padding: 80px 30px;
+}
+
+.info-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.info-card {
+    background: rgb(18, 28, 58);
+
+    padding: 30px 25px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    border: 1px solid rgba(245, 222, 179, 0.08);
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(255, 165, 0, 0.5);
+}
+
+.info-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 165, 0, 0.12);
+
+    color: orange;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 27px;
+}
+
+.info-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 21px;
+}
+
+.info-card p {
+    color: rgba(245, 222, 179, 0.65);
+
+    margin: 0;
+}
+
+
+/* ================================
+   ملاحظات الحجز
+================================ */
+
+.reservation-note {
+    max-width: 850px;
+
+    margin: 70px auto 0;
+
+    padding: 25px;
+
+    background: rgba(255, 165, 0, 0.08);
+
+    border-right: 4px solid orange;
+
+    border-radius: 6px;
+}
+
+.reservation-note h3 {
+    color: orange;
+
+    margin-top: 0;
+}
+
+.reservation-note p {
+    color: rgba(245, 222, 179, 0.7);
+
+    margin-bottom: 0;
+}
+
+
+/* ================================
+   CTA
+================================ */
+
+.reservation-cta {
+    padding: 90px 30px;
+
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+.cta-content h2 {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.cta-content p {
+    color: rgba(245, 222, 179, 0.75);
+
+    margin-bottom: 25px;
+}
+
+.main-btn {
+    display: inline-block;
+
+    background: orange;
+
+    color: rgb(10, 17, 40);
+
+    padding: 13px 30px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background: wheat;
+
+    transform: translateY(-3px);
+}
+
+
+/* ================================
+   Footer
+================================ */
+
+footer {
+    background: rgb(7, 12, 29);
+
+    padding: 50px 30px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer-logo {
+    color: orange;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: rgba(245, 222, 179, 0.65);
+}
+
+footer h3 {
+    color: wheat;
+
+    margin-bottom: 15px;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: rgba(245, 222, 179, 0.7);
+
+    transition: 0.3s;
+}
+
+footer ul li a:hover {
+    color: orange;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+
+    margin: 40px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(245, 222, 179, 0.1);
+
+    text-align: center;
+}
+
+
+/* ================================
+   الأجهزة اللوحية
+================================ */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .reservation-section {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .reservation-image img {
+        height: 450px;
+    }
+
+    .info-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* ================================
+   الجوال
+================================ */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 15px 20px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .order-btn {
+        display: none;
+    }
+
+    .reservation-hero {
+        min-height: 320px;
+    }
+
+    .reservation-hero h1 {
+        font-size: 35px;
+    }
+
+    .reservation-hero p {
+        font-size: 16px;
+    }
+
+    .reservation-section {
+        padding: 60px 20px;
+    }
+
+    .reservation-image img {
+        height: 300px;
+    }
+
+    .reservation-form-container {
+        padding: 25px 20px;
+    }
+
+    .reservation-form-container h2 {
+        font-size: 30px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .reservation-info {
+        padding: 60px 20px;
+    }
+
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .reservation-note {
+        margin-top: 50px;
+    }
+
+    .reservation-cta {
+        padding: 60px 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 30px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+}

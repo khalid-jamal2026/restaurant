@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>الحجز | مذاق</title>
+
+    <link rel="stylesheet" href="css.style/resrer.css">
+</head>
+
+<body>
+
+    <!-- ==================== Navbar ==================== -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <div class="logo">
+                مذاق
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">الرئيسية</a>
+                </li>
+
+                <li>
+                    <a href="menu.html">القائمة</a>
+                </li>
+
+                <li>
+                    <a href="offers.html">العروض</a>
+                </li>
+
+                <li>
+                    <a href="about.html">من نحن</a>
+                </li>
+
+                <li>
+                    <a href="reservation.html">الحجز</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">تواصل معنا</a>
+                </li>
+
+            </ul>
+
+            <a href="menu.html" class="order-btn">
+                اطلب الآن
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==================== Reservation Hero ==================== -->
+
+    <main>
+
+        <section class="reservation-hero">
+
+            <div class="reservation-hero-content">
+
+                <span class="section-small-title">
+                    احجز طاولتك
+                </span>
+
+                <h1>
+                    اجعل زيارتك أكثر راحة
+                </h1>
+
+                <p>
+                    احجز طاولتك مسبقًا واستمتع بتجربة مميزة
+                    في مطعم مذاق.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== Reservation Section ==================== -->
+
+        <section class="reservation-section">
+
+            <div class="reservation-container">
+
+
+                <!-- Image -->
+
+                <div class="reservation-image">
+
+                    <img
+                        src="images/about/restaurant.jpg"
+                        alt="مطعم مذاق">
+
+                    <div class="reservation-image-content">
+
+                        <h2>
+                            ننتظرك في مذاق
+                        </h2>
+
+                        <p>
+                            اختر الوقت المناسب لك ودع الباقي علينا.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Form -->
+
+                <div class="reservation-form-container">
+
+                    <div class="section-heading">
+
+                        <span class="section-small-title">
+                            حجز طاولة
+                        </span>
+
+                        <h2>
+                            احجز الآن
+                        </h2>
+
+                        <p>
+                            يرجى تعبئة البيانات التالية لإتمام طلب الحجز.
+                        </p>
+
+                    </div>
+
+
+                    <form class="reservation-form">
+
+
+                        <!-- Full Name -->
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                الاسم الكامل
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="أدخل اسمك الكامل"
+                                required>
+
+                        </div>
+
+
+                        <!-- Phone -->
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                رقم الهاتف
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="أدخل رقم الهاتف"
+                                required>
+
+                        </div>
+
+
+                        <!-- Number of People -->
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="people">
+                                    عدد الأشخاص
+                                </label>
+
+                                <select
+                                    id="people"
+                                    name="people"
+                                    required>
+
+                                    <option value="">
+                                        اختر العدد
+                                    </option>
+
+                                    <option value="1">
+                                        شخص واحد
+                                    </option>
+
+                                    <option value="2">
+                                        شخصان
+                                    </option>
+
+                                    <option value="3">
+                                        3 أشخاص
+                                    </option>
+
+                                    <option value="4">
+                                        4 أشخاص
+                                    </option>
+
+                                    <option value="5">
+                                        5 أشخاص
+                                    </option>
+
+                                    <option value="6">
+                                        6 أشخاص
+                                    </option>
+
+                                    <option value="7">
+                                        7 أشخاص
+                                    </option>
+
+                                    <option value="8">
+                                        8 أشخاص
+                                    </option>
+
+                                    <option value="9">
+                                        9 أشخاص
+                                    </option>
+
+                                    <option value="10">
+                                        10 أشخاص
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Date -->
+
+                            <div class="form-group">
+
+                                <label for="date">
+                                    التاريخ
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="date"
+                                    name="date"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Time -->
+
+                        <div class="form-group">
+
+                            <label for="time">
+                                الوقت
+                            </label>
+
+                            <input
+                                type="time"
+                                id="time"
+                                name="time"
+                                required>
+
+                        </div>
+
+
+                        <!-- Notes -->
+
+                        <div class="form-group">
+
+                            <label for="notes">
+                                ملاحظات إضافية
+                            </label>
+
+                            <textarea
+                                id="notes"
+                                name="notes"
+                                rows="5"
+                                placeholder="هل لديك أي ملاحظات أو طلبات خاصة؟"></textarea>
+
+                        </div>
+
+
+                        <!-- Submit -->
+
+                        <button
+                            type="submit"
+                            class="submit-btn">
+
+                            تأكيد الحجز
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== Reservation Information ==================== -->
+
+        <section class="reservation-info">
+
+            <div class="section-heading">
+
+                <span class="section-small-title">
+                    قبل زيارتك
+                </span>
+
+                <h2>
+                    معلومات مهمة
+                </h2>
+
+            </div>
+
+
+            <div class="info-grid">
+
+
+                <article class="info-card">
+
+                    <div class="info-icon">
+                        🕐
+                    </div>
+
+                    <h3>
+                        ساعات العمل
+                    </h3>
+
+                    <p>
+                        السبت - الخميس
+                        <br>
+                        11:00 صباحًا - 12:00 منتصف الليل
+                    </p>
+
+                </article>
+
+
+                <article class="info-card">
+
+                    <div class="info-icon">
+                        👥
+                    </div>
+
+                    <h3>
+                        عدد الأشخاص
+                    </h3>
+
+                    <p>
+                        يمكن حجز الطاولات للأفراد
+                        والمجموعات الصغيرة والعائلات.
+                    </p>
+
+                </article>
+
+
+                <article class="info-card">
+
+                    <div class="info-icon">
+                        📞
+                    </div>
+
+                    <h3>
+                        تحتاج مساعدة؟
+                    </h3>
+
+                    <p>
+                        يمكنك التواصل معنا مباشرة
+                        للاستفسار عن الحجز.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== CTA ==================== -->
+
+        <section class="reservation-cta">
+
+            <div class="cta-content">
+
+                <h2>
+                    ننتظرك في مذاق
+                </h2>
+
+                <p>
+                    تجربة شهية تبدأ من لحظة وصولك.
+                </p>
+
+                <a href="contact.html" class="main-btn">
+                    تواصل معنا
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== Footer ==================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-column">
+
+                <h3>
+                    مذاق
+                </h3>
+
+                <p>
+                    نكهة تستحق أن تتكرر.
+                    نقدم لك أشهى الوجبات بمكونات طازجة
+                    وتجربة مميزة.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    روابط سريعة
+                </h3>
+
+                <a href="index.html">الرئيسية</a>
+                <a href="menu.html">القائمة</a>
+                <a href="offers.html">العروض</a>
+                <a href="about.html">من نحن</a>
+                <a href="reservation.html">الحجز</a>
+                <a href="contact.html">تواصل معنا</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    تواصل معنا
+                </h3>
+
+                <p>
+                    صنعاء، اليمن
+                </p>
+
+                <p>
+                    777 123 456
+                </p>
+
+                <p>
+                    info@mazaq.com
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    ساعات العمل
+                </h3>
+
+                <p>
+                    السبت - الخميس
+                </p>
+
+                <p>
+                    11:00 صباحًا - 12:00 منتصف الليل
+                </p>
+
+                <p>
+                    الجمعة
+                </p>
+
+                <p>
+                    1:00 ظهرًا - 12:00 منتصف الليل
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 مذاق. جميع الحقوق محفوظة.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

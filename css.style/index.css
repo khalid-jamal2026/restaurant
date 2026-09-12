@@ -1,0 +1,663 @@
+/* ==================== Reset ==================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ==================== Body ==================== */
+
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(10, 17, 40);
+    color: wheat;
+    line-height: 1.6;
+}
+
+
+/* ==================== General ==================== */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+
+/* ==================== Header ==================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10, 17, 40, 0.96);
+    border-bottom: 1px solid rgba(245, 222, 179, 0.15);
+}
+
+
+/* ==================== Navbar ==================== */
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+
+/* ==================== Logo ==================== */
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: orange;
+}
+
+
+/* ==================== Navigation Links ==================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    position: relative;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: orange;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: orange;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* ==================== Order Button ==================== */
+
+.order-btn {
+    background: orange;
+    color: rgb(10, 17, 40);
+
+    padding: 11px 22px;
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    transform: translateY(-3px);
+    background: #ffb52e;
+}
+
+
+/* ==================== Hero ==================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(10, 17, 40, 0.72),
+            rgba(10, 17, 40, 0.72)
+        ),
+        url("../images/hero/hero-food.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* ==================== Hero Content ==================== */
+
+.hero-content {
+    width: 1200px;
+    max-width: 90%;
+    margin: auto;
+}
+
+.hero-content > span {
+    color: orange;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hero-content h1 {
+    max-width: 650px;
+
+    margin: 15px 0;
+
+    font-size: 60px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    max-width: 600px;
+
+    margin-bottom: 30px;
+
+    font-size: 19px;
+    color: #ddd;
+}
+
+
+/* ==================== Hero Buttons ==================== */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.hero-buttons a {
+    padding: 13px 28px;
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.hero-buttons .primary-btn {
+    background: orange;
+    color: rgb(10, 17, 40);
+}
+
+.hero-buttons .primary-btn:hover {
+    transform: translateY(-3px);
+}
+
+.hero-buttons .secondary-btn {
+    border: 1px solid orange;
+    color: orange;
+}
+
+.hero-buttons .secondary-btn:hover {
+    background: orange;
+    color: rgb(10, 17, 40);
+}
+
+
+/* ==================== Section ==================== */
+
+section {
+    padding: 90px 30px;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.section-heading span {
+    color: orange;
+    font-weight: bold;
+}
+
+.section-heading h2 {
+    margin: 10px 0;
+
+    font-size: 38px;
+}
+
+.section-heading p {
+    color: #ccc;
+}
+
+
+/* ==================== Popular Products ==================== */
+
+.popular-products {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+
+/* ==================== Product Card ==================== */
+
+.product-card {
+    overflow: hidden;
+
+    background: rgb(18, 28, 58);
+
+    border: 1px solid rgba(245, 222, 179, 0.1);
+    border-radius: 14px;
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: orange;
+}
+
+.product-card img {
+    height: 220px;
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    margin-bottom: 8px;
+    font-size: 21px;
+}
+
+.product-info p {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    color: orange;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* ==================== Categories ==================== */
+
+.categories {
+    background: rgb(13, 22, 48);
+}
+
+.categories-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    min-height: 160px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: rgb(18, 28, 58);
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-7px);
+    background: orange;
+    color: rgb(10, 17, 40);
+}
+
+.category-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.category-card h3 {
+    font-size: 18px;
+}
+
+
+/* ==================== Special Offer ==================== */
+
+.special-offer {
+    max-width: 1200px;
+    min-height: 350px;
+
+    margin: 90px auto;
+
+    padding: 60px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            rgba(10, 17, 40, 0.75),
+            rgba(10, 17, 40, 0.75)
+        ),
+        url("../images/offers/family-offer.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.special-content {
+    max-width: 550px;
+}
+
+.special-content span {
+    color: orange;
+    font-weight: bold;
+}
+
+.special-content h2 {
+    margin: 10px 0;
+    font-size: 40px;
+}
+
+.special-content p {
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+
+/* ==================== Main Button ==================== */
+
+.main-btn {
+    display: inline-block;
+
+    padding: 13px 28px;
+
+    background: orange;
+    color: rgb(10, 17, 40);
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ==================== Why Us ==================== */
+
+.why-us {
+    background: rgb(13, 22, 48);
+}
+
+.features-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.feature-card {
+    padding: 30px 20px;
+
+    background: rgb(18, 28, 58);
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+}
+
+.feature-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+
+/* ==================== Testimonials ==================== */
+
+.testimonials-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.testimonial-card {
+    padding: 30px;
+
+    background: rgb(18, 28, 58);
+
+    border-radius: 14px;
+
+    border-right: 3px solid orange;
+}
+
+.stars {
+    color: orange;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.testimonial-card p {
+    color: #ddd;
+    margin-bottom: 18px;
+}
+
+.testimonial-card h3 {
+    font-size: 17px;
+}
+
+
+/* ==================== CTA ==================== */
+
+.cta {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(10, 17, 40, 0.88),
+            rgba(10, 17, 40, 0.88)
+        ),
+        url("../images/hero/hero-food.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.cta h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.cta p {
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+
+/* ==================== Footer ==================== */
+
+.footer {
+    background: rgb(6, 11, 27);
+    padding-top: 70px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px 50px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+.footer-column h3 {
+    color: orange;
+    margin-bottom: 18px;
+}
+
+.footer-column p {
+    color: #bbb;
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    display: block;
+    color: #bbb;
+    margin-bottom: 9px;
+
+    transition: 0.3s;
+}
+
+.footer-column a:hover {
+    color: orange;
+    padding-right: 5px;
+}
+
+
+/* ==================== Footer Bottom ==================== */
+
+.footer-bottom {
+    padding: 20px;
+
+    border-top: 1px solid rgba(245, 222, 179, 0.1);
+
+    text-align: center;
+    color: #888;
+}
+
+
+/* ==================== Responsive ==================== */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons a {
+        text-align: center;
+    }
+
+    .products-grid,
+    .categories-grid,
+    .features-grid,
+    .testimonials-grid,
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .special-offer {
+        margin: 50px 20px;
+        padding: 35px 25px;
+    }
+
+    .special-content h2,
+    .cta h2 {
+        font-size: 32px;
+    }
+
+}

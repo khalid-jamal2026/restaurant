@@ -1,0 +1,611 @@
+/* ================================
+   إعدادات عامة
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: rgb(10, 17, 40);
+    color: wheat;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ================================
+   رأس الصفحة
+================================ */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgb(10, 17, 40);
+    border-bottom: 1px solid rgba(245, 222, 179, 0.1);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: orange;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: wheat;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: orange;
+}
+
+.order-btn {
+    background: orange;
+    color: rgb(10, 17, 40);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    background: wheat;
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   عنوان صفحة من نحن
+================================ */
+
+.about-hero {
+    min-height: 400px;
+
+    background:
+        linear-gradient(
+            rgba(10, 17, 40, 0.75),
+            rgba(10, 17, 40, 0.85)
+        ),
+        url("../images/about/restaurant.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.about-hero-content {
+    max-width: 750px;
+    padding: 30px;
+}
+
+.about-hero h1 {
+    font-size: 50px;
+    color: wheat;
+    margin-bottom: 15px;
+}
+
+.about-hero p {
+    font-size: 19px;
+    color: rgba(245, 222, 179, 0.85);
+}
+
+.section-small-title {
+    color: orange;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* ================================
+   قصتنا
+================================ */
+
+.our-story {
+    max-width: 1200px;
+    margin: auto;
+    padding: 90px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+
+    align-items: center;
+}
+
+.story-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.story-content h2 {
+    font-size: 38px;
+    margin: 0 0 20px;
+}
+
+.story-content p {
+    color: rgba(245, 222, 179, 0.75);
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.main-btn {
+    display: inline-block;
+
+    background: orange;
+    color: rgb(10, 17, 40);
+
+    padding: 12px 25px;
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background: wheat;
+    transform: translateY(-3px);
+}
+
+
+/* ================================
+   الرؤية والرسالة والقيم
+================================ */
+
+.vision-mission {
+    background: rgb(13, 22, 48);
+    padding: 90px 30px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    margin: 0 0 15px;
+}
+
+.section-heading p {
+    color: rgba(245, 222, 179, 0.7);
+}
+
+.vision-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.vision-card {
+    background: rgb(18, 28, 58);
+
+    padding: 35px 25px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    border: 1px solid rgba(245, 222, 179, 0.08);
+
+    transition: 0.3s;
+}
+
+.vision-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 165, 0, 0.5);
+}
+
+.vision-card .icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 165, 0, 0.12);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: orange;
+    font-size: 28px;
+}
+
+.vision-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.vision-card p {
+    color: rgba(245, 222, 179, 0.7);
+}
+
+
+/* ================================
+   لماذا مذاق؟
+================================ */
+
+.why-mazaq {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 90px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+
+    align-items: center;
+}
+
+.why-image img {
+    width: 100%;
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+}
+
+.why-content h2 {
+    font-size: 38px;
+    margin: 0 0 20px;
+}
+
+.why-content p {
+    color: rgba(245, 222, 179, 0.75);
+    margin-bottom: 25px;
+}
+
+.why-list li {
+    margin-bottom: 18px;
+
+    color: rgba(245, 222, 179, 0.85);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.why-list li span {
+    width: 30px;
+    height: 30px;
+
+    background: orange;
+    color: rgb(10, 17, 40);
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+}
+
+
+/* ================================
+   فريق العمل
+================================ */
+
+.team {
+    background: rgb(13, 22, 48);
+    padding: 90px 30px;
+}
+
+.team-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.team-card {
+    background: rgb(18, 28, 58);
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    border: 1px solid rgba(245, 222, 179, 0.08);
+
+    transition: 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+}
+
+.team-card img {
+    width: 100%;
+    height: 330px;
+
+    object-fit: cover;
+}
+
+.team-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.team-info h3 {
+    margin: 0 0 8px;
+    font-size: 21px;
+}
+
+.team-info p {
+    margin: 0;
+    color: orange;
+}
+
+
+/* ================================
+   دعوة للتواصل
+================================ */
+
+.about-cta {
+    padding: 90px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(10, 17, 40, 0.85),
+            rgba(10, 17, 40, 0.9)
+        ),
+        url("../images/about/restaurant.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.cta-content h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.cta-content p {
+    color: rgba(245, 222, 179, 0.8);
+    margin-bottom: 25px;
+}
+
+
+/* ================================
+   Footer
+================================ */
+
+footer {
+    background: rgb(7, 12, 29);
+    padding: 50px 30px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-logo {
+    color: orange;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: rgba(245, 222, 179, 0.65);
+}
+
+footer h3 {
+    color: wheat;
+    margin-bottom: 15px;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: rgba(245, 222, 179, 0.7);
+    transition: 0.3s;
+}
+
+footer ul li a:hover {
+    color: orange;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(245, 222, 179, 0.1);
+
+    text-align: center;
+}
+
+
+/* ================================
+   الأجهزة اللوحية
+================================ */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .our-story,
+    .why-mazaq {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .vision-grid,
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* ================================
+   الجوال
+================================ */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .order-btn {
+        display: none;
+    }
+
+    .about-hero {
+        min-height: 320px;
+    }
+
+    .about-hero h1 {
+        font-size: 35px;
+    }
+
+    .about-hero p {
+        font-size: 16px;
+    }
+
+    .our-story,
+    .why-mazaq {
+        padding: 60px 20px;
+    }
+
+    .story-image img,
+    .why-image img {
+        height: 300px;
+    }
+
+    .story-content h2,
+    .why-content h2 {
+        font-size: 30px;
+    }
+
+    .vision-mission,
+    .team {
+        padding: 60px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .vision-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card img {
+        height: 300px;
+    }
+
+    .about-cta {
+        padding: 60px 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 30px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+}
