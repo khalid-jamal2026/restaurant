@@ -1,3 +1,4 @@
+
 /* ================================
    إعدادات عامة
 ================================ */
@@ -6,27 +7,40 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
+
     font-family: Arial, sans-serif;
+
     line-height: 1.6;
+
     background: rgb(10, 17, 40);
+
     color: wheat;
+
+    overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
+
     color: inherit;
 }
 
 ul {
     list-style: none;
+
     margin: 0;
     padding: 0;
 }
 
 img {
     max-width: 100%;
+
     display: block;
 }
 
@@ -37,39 +51,100 @@ img {
 
 header {
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
 
-    background: rgb(10, 17, 40);
+    background: rgba(10, 17, 40, 0.97);
 
-    border-bottom: 1px solid rgba(245, 222, 179, 0.1);
+    border-bottom:
+        1px solid
+        rgba(245, 222, 179, 0.1);
+
+    backdrop-filter: blur(8px);
 }
 
+
+/* ================================
+   Navbar
+================================ */
+
 .navbar {
+    width: 100%;
+
     max-width: 1200px;
+
     margin: auto;
 
     padding: 18px 30px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
+    gap: 25px;
 }
+
+
+/* ================================
+   Logo
+================================ */
 
 .logo {
     color: orange;
-    font-size: 30px;
+
+    font-size: clamp(25px, 3vw, 30px);
+
     font-weight: bold;
+
+    white-space: nowrap;
 }
+
+
+/* ================================
+   Navigation
+================================ */
 
 .nav-links {
     display: flex;
-    gap: 28px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: clamp(15px, 2.5vw, 28px);
 }
 
 .nav-links a {
+    position: relative;
+
     color: wheat;
+
     font-size: 16px;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: orange;
+
     transition: 0.3s;
 }
 
@@ -77,8 +152,18 @@ header {
     color: orange;
 }
 
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* ================================
+   زر الطلب
+================================ */
+
 .order-btn {
     background: orange;
+
     color: rgb(10, 17, 40);
 
     padding: 10px 20px;
@@ -87,11 +172,14 @@ header {
 
     font-weight: bold;
 
+    white-space: nowrap;
+
     transition: 0.3s;
 }
 
 .order-btn:hover {
     background: wheat;
+
     transform: translateY(-2px);
 }
 
@@ -103,6 +191,8 @@ header {
 .contact-hero {
     min-height: 400px;
 
+    padding: 60px 20px;
+
     background:
         linear-gradient(
             rgba(10, 17, 40, 0.7),
@@ -111,28 +201,38 @@ header {
         url("../images/about/restaurant.jpg");
 
     background-size: cover;
+
     background-position: center;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
 }
 
 .contact-hero-content {
+    width: 100%;
+
     max-width: 750px;
+
     padding: 30px;
 }
 
 .contact-hero h1 {
-    font-size: 50px;
+    font-size: clamp(35px, 5vw, 50px);
+
     margin: 0 0 15px;
 }
 
 .contact-hero p {
     color: rgba(245, 222, 179, 0.85);
-    font-size: 19px;
+
+    font-size: clamp(16px, 2vw, 19px);
+
+    margin: 0;
 }
 
 
@@ -141,6 +241,8 @@ header {
 ================================ */
 
 .contact-section {
+    width: 100%;
+
     max-width: 1200px;
 
     margin: auto;
@@ -149,7 +251,9 @@ header {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
     gap: 60px;
 
@@ -176,7 +280,7 @@ header {
 }
 
 .contact-info h2 {
-    font-size: 38px;
+    font-size: clamp(30px, 4vw, 38px);
 
     margin: 0 0 15px;
 }
@@ -184,7 +288,7 @@ header {
 .contact-info > p {
     color: rgba(245, 222, 179, 0.7);
 
-    margin-bottom: 30px;
+    margin: 0 0 30px;
 }
 
 .contact-items {
@@ -208,7 +312,9 @@ header {
 
     border-radius: 10px;
 
-    border: 1px solid rgba(245, 222, 179, 0.08);
+    border:
+        1px solid
+        rgba(245, 222, 179, 0.08);
 
     transition: 0.3s;
 }
@@ -216,24 +322,28 @@ header {
 .contact-item:hover {
     transform: translateX(-5px);
 
-    border-color: rgba(255, 165, 0, 0.5);
+    border-color:
+        rgba(255, 165, 0, 0.5);
 }
 
 .contact-icon {
     width: 50px;
+
     height: 50px;
 
     flex-shrink: 0;
 
     border-radius: 50%;
 
-    background: rgba(255, 165, 0, 0.12);
+    background:
+        rgba(255, 165, 0, 0.12);
 
     color: orange;
 
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     font-size: 22px;
@@ -249,6 +359,8 @@ header {
     margin: 0;
 
     color: rgba(245, 222, 179, 0.65);
+
+    overflow-wrap: anywhere;
 }
 
 
@@ -257,19 +369,25 @@ header {
 ================================ */
 
 .contact-form-container {
+    width: 100%;
+
     background: rgb(18, 28, 58);
 
     padding: 35px;
 
     border-radius: 15px;
 
-    border: 1px solid rgba(245, 222, 179, 0.08);
+    border:
+        1px solid
+        rgba(245, 222, 179, 0.08);
 
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.2);
 }
 
 .contact-form-container h2 {
-    font-size: 30px;
+    font-size: clamp(25px, 3vw, 30px);
 
     margin: 0 0 25px;
 }
@@ -292,19 +410,25 @@ header {
 .form-group textarea {
     width: 100%;
 
+    min-width: 0;
+
     padding: 13px 15px;
 
     background: rgb(10, 17, 40);
 
     color: wheat;
 
-    border: 1px solid rgba(245, 222, 179, 0.15);
+    border:
+        1px solid
+        rgba(245, 222, 179, 0.15);
 
     border-radius: 6px;
 
     outline: none;
 
     font-family: inherit;
+
+    font-size: 15px;
 
     transition: 0.3s;
 }
@@ -313,7 +437,9 @@ header {
 .form-group textarea:focus {
     border-color: orange;
 
-    box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.1);
+    box-shadow:
+        0 0 0 2px
+        rgba(255, 165, 0, 0.1);
 }
 
 .form-group textarea {
@@ -330,7 +456,9 @@ header {
 .form-row {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
     gap: 15px;
 }
@@ -375,6 +503,8 @@ header {
 }
 
 .map-container {
+    width: 100%;
+
     max-width: 1200px;
 
     margin: auto;
@@ -387,13 +517,15 @@ header {
 }
 
 .map-heading h2 {
-    font-size: 35px;
+    font-size: clamp(28px, 4vw, 35px);
 
-    margin-bottom: 10px;
+    margin: 0 0 10px;
 }
 
 .map-heading p {
     color: rgba(245, 222, 179, 0.7);
+
+    margin: 0;
 }
 
 .map-box {
@@ -409,7 +541,9 @@ header {
             rgba(10, 17, 40, 0.85)
         );
 
-    border: 1px solid rgba(245, 222, 179, 0.1);
+    border:
+        1px solid
+        rgba(245, 222, 179, 0.1);
 
     display: flex;
 
@@ -418,10 +552,14 @@ header {
     align-items: center;
 
     text-align: center;
+
+    overflow: hidden;
 }
 
 .map-content {
     padding: 20px;
+
+    max-width: 600px;
 }
 
 .map-content .map-icon {
@@ -435,11 +573,13 @@ header {
 .map-content h3 {
     font-size: 24px;
 
-    margin-bottom: 8px;
+    margin: 0 0 8px;
 }
 
 .map-content p {
     color: rgba(245, 222, 179, 0.65);
+
+    margin: 0;
 }
 
 
@@ -448,6 +588,8 @@ header {
 ================================ */
 
 .faq-section {
+    width: 100%;
+
     max-width: 1000px;
 
     margin: auto;
@@ -462,13 +604,15 @@ header {
 }
 
 .faq-heading h2 {
-    font-size: 38px;
+    font-size: clamp(30px, 4vw, 38px);
 
-    margin-bottom: 10px;
+    margin: 0 0 10px;
 }
 
 .faq-heading p {
     color: rgba(245, 222, 179, 0.7);
+
+    margin: 0;
 }
 
 .faq-item {
@@ -480,13 +624,16 @@ header {
 
     border-radius: 10px;
 
-    border: 1px solid rgba(245, 222, 179, 0.08);
+    border:
+        1px solid
+        rgba(245, 222, 179, 0.08);
 
     transition: 0.3s;
 }
 
 .faq-item:hover {
-    border-color: rgba(255, 165, 0, 0.4);
+    border-color:
+        rgba(255, 165, 0, 0.4);
 }
 
 .faq-item h3 {
@@ -526,21 +673,23 @@ header {
 }
 
 .cta-content {
+    width: 100%;
+
     max-width: 700px;
 
     margin: auto;
 }
 
 .cta-content h2 {
-    font-size: 40px;
+    font-size: clamp(30px, 4vw, 40px);
 
-    margin-bottom: 15px;
+    margin: 0 0 15px;
 }
 
 .cta-content p {
     color: rgba(245, 222, 179, 0.75);
 
-    margin-bottom: 25px;
+    margin: 0 0 25px;
 }
 
 .main-btn {
@@ -577,13 +726,16 @@ footer {
 }
 
 .footer-container {
+    width: 100%;
+
     max-width: 1200px;
 
     margin: auto;
 
     display: grid;
 
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns:
+        2fr 1fr 1fr;
 
     gap: 50px;
 }
@@ -605,7 +757,7 @@ footer p {
 footer h3 {
     color: wheat;
 
-    margin-bottom: 15px;
+    margin: 0 0 15px;
 }
 
 footer ul li {
@@ -623,15 +775,43 @@ footer ul li a:hover {
 }
 
 .footer-bottom {
+    width: 100%;
+
     max-width: 1200px;
 
     margin: 40px auto 0;
 
     padding-top: 20px;
 
-    border-top: 1px solid rgba(245, 222, 179, 0.1);
+    border-top:
+        1px solid
+        rgba(245, 222, 179, 0.1);
 
     text-align: center;
+}
+
+
+/* ================================
+   الشاشات المتوسطة
+================================ */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 18px 25px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .contact-section {
+        gap: 35px;
+    }
+
+    .footer-container {
+        gap: 30px;
+    }
 }
 
 
@@ -641,18 +821,38 @@ footer ul li a:hover {
 
 @media (max-width: 900px) {
 
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    /*
+       نجعل روابط القائمة في سطر مستقل
+       حتى لا تضغط على الشعار والزر
+    */
+
     .nav-links {
-        gap: 15px;
+        width: 100%;
+
+        order: 3;
+
+        justify-content: center;
     }
 
     .contact-section {
         grid-template-columns: 1fr;
 
-        gap: 40px;
+        gap: 45px;
+
+        padding: 70px 30px;
+    }
+
+    .contact-info {
+        padding-top: 0;
     }
 
     .footer-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
     }
 }
 
@@ -666,8 +866,6 @@ footer ul li a:hover {
     .navbar {
         padding: 15px 20px;
 
-        flex-wrap: wrap;
-
         gap: 15px;
     }
 
@@ -675,26 +873,84 @@ footer ul li a:hover {
         font-size: 25px;
     }
 
+
+    /* ----------------
+       Navigation
+    ---------------- */
+
     .nav-links {
         width: 100%;
 
-        justify-content: center;
+        display: grid;
 
-        flex-wrap: wrap;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
-        gap: 12px;
+        gap: 8px;
+
+        order: 3;
+    }
+
+    .nav-links li {
+        width: 100%;
     }
 
     .nav-links a {
+        display: block;
+
+        width: 100%;
+
+        padding: 8px 5px;
+
+        text-align: center;
+
         font-size: 14px;
+
+        border:
+            1px solid
+            rgba(245, 222, 179, 0.08);
+
+        border-radius: 5px;
     }
 
-    .order-btn {
+    .nav-links a::after {
         display: none;
     }
 
+    .nav-links a:hover {
+        background:
+            rgba(255, 165, 0, 0.1);
+
+        border-color:
+            rgba(255, 165, 0, 0.4);
+    }
+
+
+    /* ----------------
+       Order Button
+    ---------------- */
+
+    .order-btn {
+        width: 100%;
+
+        text-align: center;
+
+        order: 4;
+    }
+
+
+    /* ----------------
+       Hero
+    ---------------- */
+
     .contact-hero {
         min-height: 320px;
+
+        padding: 45px 15px;
+    }
+
+    .contact-hero-content {
+        padding: 20px 10px;
     }
 
     .contact-hero h1 {
@@ -705,16 +961,50 @@ footer ul li a:hover {
         font-size: 16px;
     }
 
+
+    /* ----------------
+       Contact Section
+    ---------------- */
+
     .contact-section {
         padding: 60px 20px;
+
+        gap: 35px;
     }
 
     .contact-info h2 {
         font-size: 30px;
     }
 
+    .contact-info > p {
+        margin-bottom: 25px;
+    }
+
+    .contact-item {
+        padding: 15px;
+
+        gap: 12px;
+    }
+
+    .contact-icon {
+        width: 45px;
+
+        height: 45px;
+
+        font-size: 20px;
+    }
+
+
+    /* ----------------
+       Contact Form
+    ---------------- */
+
     .contact-form-container {
         padding: 25px 20px;
+    }
+
+    .contact-form-container h2 {
+        font-size: 27px;
     }
 
     .form-row {
@@ -723,8 +1013,17 @@ footer ul li a:hover {
         gap: 0;
     }
 
+
+    /* ----------------
+       Map
+    ---------------- */
+
     .map-section {
         padding: 60px 20px;
+    }
+
+    .map-heading {
+        margin-bottom: 30px;
     }
 
     .map-heading h2 {
@@ -733,15 +1032,49 @@ footer ul li a:hover {
 
     .map-box {
         height: 300px;
+
+        border-radius: 12px;
     }
+
+    .map-content .map-icon {
+        font-size: 40px;
+    }
+
+    .map-content h3 {
+        font-size: 21px;
+    }
+
+
+    /* ----------------
+       FAQ
+    ---------------- */
 
     .faq-section {
         padding: 60px 20px;
     }
 
+    .faq-heading {
+        margin-bottom: 35px;
+    }
+
     .faq-heading h2 {
         font-size: 30px;
     }
+
+    .faq-item {
+        padding: 18px;
+
+        margin-bottom: 12px;
+    }
+
+    .faq-item h3 {
+        font-size: 17px;
+    }
+
+
+    /* ----------------
+       CTA
+    ---------------- */
 
     .contact-cta {
         padding: 60px 20px;
@@ -751,9 +1084,166 @@ footer ul li a:hover {
         font-size: 30px;
     }
 
+    .main-btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* ----------------
+       Footer
+    ---------------- */
+
+    footer {
+        padding: 45px 20px 20px;
+    }
+
     .footer-container {
         grid-template-columns: 1fr;
 
         gap: 30px;
+    }
+}
+
+
+/* ================================
+   الجوال الصغير
+================================ */
+
+@media (max-width: 450px) {
+
+    .navbar {
+        padding: 14px 15px;
+    }
+
+    .nav-links {
+        gap: 6px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+
+        padding: 7px 3px;
+    }
+
+
+    /* Hero */
+
+    .contact-hero {
+        min-height: 290px;
+    }
+
+    .contact-hero h1 {
+        font-size: 30px;
+    }
+
+
+    /* Contact */
+
+    .contact-section {
+        padding: 50px 15px;
+    }
+
+    .contact-info h2 {
+        font-size: 27px;
+    }
+
+    .contact-item {
+        align-items: flex-start;
+
+        padding: 14px;
+    }
+
+    .contact-icon {
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 18px;
+    }
+
+    .contact-item h3 {
+        font-size: 17px;
+    }
+
+    .contact-item p {
+        font-size: 14px;
+    }
+
+
+    /* Form */
+
+    .contact-form-container {
+        padding: 22px 16px;
+    }
+
+    .contact-form-container h2 {
+        font-size: 24px;
+    }
+
+
+    /* Map */
+
+    .map-section {
+        padding: 50px 15px;
+    }
+
+    .map-box {
+        height: 260px;
+    }
+
+
+    /* FAQ */
+
+    .faq-section {
+        padding: 50px 15px;
+    }
+
+    .faq-heading h2 {
+        font-size: 27px;
+    }
+
+    .faq-item {
+        padding: 16px;
+    }
+
+
+    /* CTA */
+
+    .contact-cta {
+        padding: 50px 15px;
+    }
+
+    .cta-content h2 {
+        font-size: 27px;
+    }
+}
+
+
+/* ================================
+   الجوال الصغير جداً
+================================ */
+
+@media (max-width: 360px) {
+
+    .nav-links {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-hero h1 {
+        font-size: 27px;
+    }
+
+    .contact-info h2 {
+        font-size: 25px;
+    }
+
+    .map-box {
+        height: 230px;
+    }
+
+    .faq-heading h2 {
+        font-size: 25px;
     }
 }

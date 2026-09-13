@@ -1,4 +1,7 @@
-/* ==================== Reset ==================== */
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -6,18 +9,17 @@
     padding: 0;
 }
 
-
-/* ==================== Body ==================== */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: Arial, sans-serif;
     background: rgb(10, 17, 40);
     color: wheat;
     line-height: 1.6;
+    overflow-x: hidden;
 }
-
-
-/* ==================== General ==================== */
 
 a {
     text-decoration: none;
@@ -30,61 +32,103 @@ ul {
 
 img {
     width: 100%;
+    max-width: 100%;
+    height: auto;
     display: block;
 }
 
 
-/* ==================== Header ==================== */
+/* =========================================================
+   HEADER
+========================================================= */
 
 .header {
     position: sticky;
     top: 0;
     z-index: 1000;
+
     background: rgba(10, 17, 40, 0.96);
+
     border-bottom: 1px solid rgba(245, 222, 179, 0.15);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 
-/* ==================== Navbar ==================== */
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 .navbar {
+    width: 100%;
     max-width: 1200px;
+
     margin: auto;
+
     padding: 18px 30px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 25px;
 }
 
 
-/* ==================== Logo ==================== */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo {
-    font-size: 32px;
+    flex-shrink: 0;
+
+    font-size: clamp(24px, 3vw, 32px);
+
     font-weight: bold;
+
     color: orange;
+
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.03);
 }
 
 
-/* ==================== Navigation Links ==================== */
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
 
 .nav-links {
     display: flex;
+
     align-items: center;
-    gap: 25px;
+    justify-content: center;
+
+    gap: clamp(14px, 2vw, 25px);
+
+    flex: 1;
 }
 
 .nav-links a {
     position: relative;
+
     font-size: 16px;
-    transition: 0.3s;
+
+    white-space: nowrap;
+
+    transition: 0.3s ease;
 }
 
 .nav-links a::after {
     content: "";
+
     position: absolute;
+
     right: 0;
     bottom: -7px;
 
@@ -92,7 +136,8 @@ img {
     height: 2px;
 
     background: orange;
-    transition: 0.3s;
+
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -104,27 +149,43 @@ img {
 }
 
 
-/* ==================== Order Button ==================== */
+/* =========================================================
+   ORDER BUTTON
+========================================================= */
 
 .order-btn {
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
     background: orange;
+
     color: rgb(10, 17, 40);
 
     padding: 11px 22px;
+
     border-radius: 8px;
 
     font-weight: bold;
 
-    transition: 0.3s;
+    white-space: nowrap;
+
+    transition: 0.3s ease;
 }
 
 .order-btn:hover {
     transform: translateY(-3px);
+
     background: #ffb52e;
 }
 
 
-/* ==================== Hero ==================== */
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
     min-height: 650px;
@@ -141,20 +202,29 @@ img {
 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 
-/* ==================== Hero Content ==================== */
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .hero-content {
     width: 1200px;
+
     max-width: 90%;
+
     margin: auto;
 }
 
 .hero-content > span {
+    display: inline-block;
+
     color: orange;
-    font-size: 18px;
+
+    font-size: clamp(15px, 2vw, 18px);
+
     font-weight: bold;
 }
 
@@ -163,7 +233,8 @@ img {
 
     margin: 15px 0;
 
-    font-size: 60px;
+    font-size: clamp(40px, 5vw, 60px);
+
     line-height: 1.2;
 }
 
@@ -172,56 +243,83 @@ img {
 
     margin-bottom: 30px;
 
-    font-size: 19px;
+    font-size: clamp(16px, 2vw, 19px);
+
     color: #ddd;
 }
 
 
-/* ==================== Hero Buttons ==================== */
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
 
 .hero-buttons {
     display: flex;
+
     gap: 15px;
+
     align-items: center;
+
+    flex-wrap: wrap;
 }
 
 .hero-buttons a {
+    min-width: 150px;
+
     padding: 13px 28px;
+
     border-radius: 8px;
 
     font-weight: bold;
 
-    transition: 0.3s;
+    text-align: center;
+
+    transition: 0.3s ease;
 }
 
 .hero-buttons .primary-btn {
     background: orange;
+
     color: rgb(10, 17, 40);
 }
 
 .hero-buttons .primary-btn:hover {
     transform: translateY(-3px);
+
+    background: #ffb52e;
 }
 
 .hero-buttons .secondary-btn {
     border: 1px solid orange;
+
     color: orange;
 }
 
 .hero-buttons .secondary-btn:hover {
     background: orange;
+
     color: rgb(10, 17, 40);
 }
 
 
-/* ==================== Section ==================== */
+/* =========================================================
+   SECTIONS
+========================================================= */
 
 section {
-    padding: 90px 30px;
+    padding: clamp(60px, 8vw, 90px) 30px;
 }
 
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
 .section-heading {
+    width: 100%;
+
     max-width: 700px;
+
     margin: 0 auto 50px;
 
     text-align: center;
@@ -229,57 +327,78 @@ section {
 
 .section-heading span {
     color: orange;
+
     font-weight: bold;
 }
 
 .section-heading h2 {
     margin: 10px 0;
 
-    font-size: 38px;
+    font-size: clamp(28px, 4vw, 38px);
+
+    line-height: 1.25;
 }
 
 .section-heading p {
     color: #ccc;
+
+    font-size: 16px;
 }
 
 
-/* ==================== Popular Products ==================== */
+/* =========================================================
+   POPULAR PRODUCTS
+========================================================= */
 
 .popular-products {
+    width: 100%;
+
     max-width: 1200px;
+
     margin: auto;
 }
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
     gap: 25px;
 }
 
 
-/* ==================== Product Card ==================== */
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
 
 .product-card {
+    min-width: 0;
+
     overflow: hidden;
 
     background: rgb(18, 28, 58);
 
     border: 1px solid rgba(245, 222, 179, 0.1);
+
     border-radius: 14px;
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-8px);
+
     border-color: orange;
 }
 
 .product-card img {
+    width: 100%;
+
     height: 220px;
+
     object-fit: cover;
 
-    transition: 0.4s;
+    transition: 0.4s ease;
 }
 
 .product-card:hover img {
@@ -292,34 +411,48 @@ section {
 
 .product-info h3 {
     margin-bottom: 8px;
+
     font-size: 21px;
+
+    line-height: 1.4;
 }
 
 .product-info p {
     color: #ccc;
+
     font-size: 14px;
+
     margin-bottom: 15px;
 }
 
 .product-price {
     color: orange;
+
     font-size: 20px;
+
     font-weight: bold;
 }
 
 
-/* ==================== Categories ==================== */
+/* =========================================================
+   CATEGORIES
+========================================================= */
 
 .categories {
     background: rgb(13, 22, 48);
 }
 
 .categories-grid {
+    width: 100%;
+
     max-width: 1200px;
+
     margin: auto;
 
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+
     gap: 20px;
 }
 
@@ -327,9 +460,14 @@ section {
     min-height: 160px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
+
+    padding: 20px;
 
     background: rgb(18, 28, 58);
 
@@ -337,17 +475,20 @@ section {
 
     text-align: center;
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .category-card:hover {
     transform: translateY(-7px);
+
     background: orange;
+
     color: rgb(10, 17, 40);
 }
 
 .category-icon {
     font-size: 42px;
+
     margin-bottom: 12px;
 }
 
@@ -356,17 +497,23 @@ section {
 }
 
 
-/* ==================== Special Offer ==================== */
+/* =========================================================
+   SPECIAL OFFER
+========================================================= */
 
 .special-offer {
+    width: 100%;
+
     max-width: 1200px;
+
     min-height: 350px;
 
     margin: 90px auto;
 
-    padding: 60px;
+    padding: clamp(35px, 6vw, 60px);
 
     display: flex;
+
     align-items: center;
 
     border-radius: 18px;
@@ -379,63 +526,89 @@ section {
         url("../images/offers/family-offer.jpg");
 
     background-size: cover;
+
     background-position: center;
+
+    background-repeat: no-repeat;
 }
 
 .special-content {
+    width: 100%;
+
     max-width: 550px;
 }
 
 .special-content span {
     color: orange;
+
     font-weight: bold;
 }
 
 .special-content h2 {
     margin: 10px 0;
-    font-size: 40px;
+
+    font-size: clamp(30px, 4vw, 40px);
+
+    line-height: 1.25;
 }
 
 .special-content p {
     color: #ddd;
+
     margin-bottom: 25px;
 }
 
 
-/* ==================== Main Button ==================== */
+/* =========================================================
+   MAIN BUTTON
+========================================================= */
 
 .main-btn {
-    display: inline-block;
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     padding: 13px 28px;
 
     background: orange;
+
     color: rgb(10, 17, 40);
 
     border-radius: 8px;
 
     font-weight: bold;
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .main-btn:hover {
     transform: translateY(-3px);
+
+    background: #ffb52e;
 }
 
 
-/* ==================== Why Us ==================== */
+/* =========================================================
+   WHY US
+========================================================= */
 
 .why-us {
     background: rgb(13, 22, 48);
 }
 
 .features-grid {
+    width: 100%;
+
     max-width: 1200px;
+
     margin: auto;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
     gap: 25px;
 }
 
@@ -448,40 +621,55 @@ section {
 
     text-align: center;
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .feature-card:hover {
     transform: translateY(-7px);
+
+    border: 1px solid rgba(255, 165, 0, 0.5);
 }
 
 .feature-icon {
     font-size: 42px;
+
     margin-bottom: 15px;
 }
 
 .feature-card h3 {
     margin-bottom: 10px;
+
+    font-size: 19px;
 }
 
 .feature-card p {
     color: #ccc;
+
     font-size: 14px;
 }
 
 
-/* ==================== Testimonials ==================== */
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
 
 .testimonials-grid {
+    width: 100%;
+
     max-width: 1100px;
+
     margin: auto;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 25px;
 }
 
 .testimonial-card {
+    min-width: 0;
+
     padding: 30px;
 
     background: rgb(18, 28, 58);
@@ -489,16 +677,25 @@ section {
     border-radius: 14px;
 
     border-right: 3px solid orange;
+
+    transition: 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
 }
 
 .stars {
     color: orange;
+
     font-size: 20px;
+
     margin-bottom: 15px;
 }
 
 .testimonial-card p {
     color: #ddd;
+
     margin-bottom: 18px;
 }
 
@@ -507,7 +704,9 @@ section {
 }
 
 
-/* ==================== CTA ==================== */
+/* =========================================================
+   CTA
+========================================================= */
 
 .cta {
     text-align: center;
@@ -520,62 +719,89 @@ section {
         url("../images/hero/hero-food.jpg");
 
     background-size: cover;
+
     background-position: center;
+
+    background-repeat: no-repeat;
 }
 
 .cta h2 {
-    font-size: 42px;
+    font-size: clamp(30px, 4vw, 42px);
+
     margin-bottom: 10px;
+
+    line-height: 1.25;
 }
 
 .cta p {
     color: #ddd;
+
     margin-bottom: 25px;
 }
 
 
-/* ==================== Footer ==================== */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .footer {
     background: rgb(6, 11, 27);
+
     padding-top: 70px;
 }
 
 .footer-container {
+    width: 100%;
+
     max-width: 1200px;
+
     margin: auto;
+
     padding: 0 30px 50px;
 
     display: grid;
+
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
     gap: 40px;
+}
+
+.footer-column {
+    min-width: 0;
 }
 
 .footer-column h3 {
     color: orange;
+
     margin-bottom: 18px;
 }
 
 .footer-column p {
     color: #bbb;
+
     margin-bottom: 8px;
 }
 
 .footer-column a {
     display: block;
+
     color: #bbb;
+
     margin-bottom: 9px;
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .footer-column a:hover {
     color: orange;
+
     padding-right: 5px;
 }
 
 
-/* ==================== Footer Bottom ==================== */
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
 
 .footer-bottom {
     padding: 20px;
@@ -583,46 +809,444 @@ section {
     border-top: 1px solid rgba(245, 222, 179, 0.1);
 
     text-align: center;
+
     color: #888;
+
+    font-size: 14px;
 }
 
 
-/* ==================== Responsive ==================== */
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 
     .nav-links {
-        gap: 12px;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
     }
 
     .products-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .categories-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .features-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .footer-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
 }
 
 
-@media (max-width: 700px) {
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
 
     .navbar {
-        flex-direction: column;
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .logo {
+        width: 100%;
+
+        text-align: center;
     }
 
     .nav-links {
-        flex-wrap: wrap;
+        order: 2;
+
+        width: 100%;
+
         justify-content: center;
+
+        flex-wrap: wrap;
+
+        row-gap: 10px;
+    }
+
+    .order-btn {
+        order: 3;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-content {
+        max-width: 88%;
+    }
+
+    .special-offer {
+        margin-top: 60px;
+
+        margin-bottom: 60px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* ---------- GENERAL ---------- */
+
+    body {
+        width: 100%;
+
+        overflow-x: hidden;
+    }
+
+    section {
+        padding: 60px 18px;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    .navbar {
+        width: 100%;
+
+        padding: 15px 16px;
+
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 27px;
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+
+        order: 2;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        width: 100%;
+
+        min-height: 42px;
+
+        padding: 8px 5px;
+
+        background: rgba(255, 255, 255, 0.03);
+
+        border: 1px solid rgba(245, 222, 179, 0.08);
+
+        border-radius: 7px;
+
+        font-size: 14px;
+
+        text-align: center;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .nav-links a:hover {
+        background: orange;
+
+        color: rgb(10, 17, 40);
+    }
+
+    .order-btn {
+        width: 100%;
+
+        order: 3;
+
+        min-height: 44px;
+
+        margin-top: 2px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: 580px;
+
+        background-position: center;
+    }
+
+    .hero-content {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 40px 2px;
+    }
+
+    .hero-content > span {
+        font-size: 15px;
+    }
+
+    .hero-content h1 {
+        max-width: 100%;
+
+        margin: 12px 0;
+
+        font-size: clamp(34px, 10vw, 45px);
+
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        max-width: 100%;
+
+        font-size: 16px;
+
+        margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 13px 20px;
+    }
+
+
+    /* ---------- SECTION HEADING ---------- */
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .section-heading p {
+        font-size: 15px;
+    }
+
+
+    /* ---------- PRODUCTS ---------- */
+
+    .products-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    .product-card img {
+        height: 220px;
+    }
+
+    .product-info {
+        padding: 18px;
+    }
+
+
+    /* ---------- CATEGORIES ---------- */
+
+    .categories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .category-card {
+        min-height: 135px;
+
+        padding: 15px 10px;
+    }
+
+    .category-icon {
+        font-size: 34px;
+
+        margin-bottom: 8px;
+    }
+
+    .category-card h3 {
+        font-size: 16px;
+    }
+
+
+    /* ---------- SPECIAL OFFER ---------- */
+
+    .special-offer {
+        min-height: 360px;
+
+        margin: 40px 0;
+
+        padding: 35px 22px;
+
+        border-radius: 14px;
+    }
+
+    .special-content {
+        max-width: 100%;
+    }
+
+    .special-content h2 {
+        font-size: 30px;
+    }
+
+    .special-content p {
+        font-size: 15px;
+    }
+
+    .main-btn {
+        width: 100%;
+
+        padding: 13px 20px;
+    }
+
+
+    /* ---------- FEATURES ---------- */
+
+    .features-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .feature-card {
+        padding: 25px 18px;
+    }
+
+
+    /* ---------- TESTIMONIALS ---------- */
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .testimonial-card {
+        padding: 23px;
+    }
+
+
+    /* ---------- CTA ---------- */
+
+    .cta h2 {
+        font-size: 30px;
+    }
+
+    .cta p {
+        font-size: 15px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer {
+        padding-top: 55px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 0 20px 40px;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .footer-column a:hover {
+        padding-right: 0;
+    }
+
+    .footer-bottom {
+        padding: 18px 15px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    section {
+        padding: 50px 14px;
+    }
+
+    .navbar {
+        padding: 13px 12px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 6px;
+    }
+
+    .nav-links a {
+        min-height: 40px;
+
+        font-size: 13px;
     }
 
     .hero {
@@ -630,34 +1254,73 @@ section {
     }
 
     .hero-content h1 {
-        font-size: 42px;
+        font-size: 35px;
     }
 
-    .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
+    .hero-content p {
+        font-size: 15px;
     }
 
-    .hero-buttons a {
-        text-align: center;
+    .products-grid {
+        gap: 16px;
     }
 
-    .products-grid,
-    .categories-grid,
-    .features-grid,
-    .testimonials-grid,
-    .footer-container {
-        grid-template-columns: 1fr;
+    .product-card img {
+        height: 200px;
+    }
+
+    .categories-grid {
+        gap: 10px;
+    }
+
+    .category-card {
+        min-height: 125px;
+    }
+
+    .category-icon {
+        font-size: 30px;
+    }
+
+    .category-card h3 {
+        font-size: 14px;
     }
 
     .special-offer {
-        margin: 50px 20px;
-        padding: 35px 25px;
+        padding: 30px 18px;
+
+        min-height: 330px;
     }
 
-    .special-content h2,
-    .cta h2 {
-        font-size: 32px;
+    .special-content h2 {
+        font-size: 27px;
     }
 
+    .footer-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .nav-links {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 31px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        min-height: 110px;
+    }
 }

@@ -1,18 +1,31 @@
-/* ================================
-   إعدادات عامة
-================================ */
+
+/* ====================
+   Reset
+==================== */
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     background: rgb(10, 17, 40);
     color: wheat;
+    line-height: 1.6;
+
+    overflow-x: hidden;
 }
+
+
+/* ====================
+   General
+==================== */
 
 a {
     text-decoration: none;
@@ -21,55 +34,101 @@ a {
 
 ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
     display: block;
 }
 
 
-/* ================================
-   رأس الصفحة
-================================ */
+/* ====================
+   Header
+==================== */
 
-header {
+.header {
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    background: rgb(10, 17, 40);
+    background: rgba(10, 17, 40, 0.97);
 
-    border-bottom: 1px solid rgba(245, 222, 179, 0.1);
+    border-bottom: 1px solid rgba(245, 222, 179, 0.15);
+
+    backdrop-filter: blur(8px);
 }
 
+
+/* ====================
+   Navbar
+==================== */
+
 .navbar {
+    width: 100%;
     max-width: 1200px;
+
     margin: auto;
 
     padding: 18px 30px;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
 }
 
+
+/* ====================
+   Logo
+==================== */
+
 .logo {
-    color: orange;
-    font-size: 30px;
+    font-size: clamp(25px, 3vw, 32px);
+
     font-weight: bold;
+
+    color: orange;
+
+    white-space: nowrap;
 }
+
+
+/* ====================
+   Navigation
+==================== */
 
 .nav-links {
     display: flex;
-    gap: 28px;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(15px, 2.5vw, 25px);
 }
 
 .nav-links a {
-    color: wheat;
+    position: relative;
+
     font-size: 16px;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: orange;
 
     transition: 0.3s;
 }
@@ -78,464 +137,463 @@ header {
     color: orange;
 }
 
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* ====================
+   Order Button
+==================== */
+
 .order-btn {
     background: orange;
+
     color: rgb(10, 17, 40);
 
-    padding: 10px 20px;
+    padding: 11px 22px;
 
-    border-radius: 6px;
+    border-radius: 8px;
 
     font-weight: bold;
+
+    white-space: nowrap;
 
     transition: 0.3s;
 }
 
 .order-btn:hover {
-    background: wheat;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+
+    background: #ffb52e;
 }
 
 
-/* ================================
-   Hero الحجز
-================================ */
+/* ====================
+   Menu Hero
+==================== */
 
-.reservation-hero {
-    min-height: 400px;
+.menu-hero {
+    min-height: 430px;
+
+    padding: 60px 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
 
     background:
         linear-gradient(
-            rgba(10, 17, 40, 0.7),
-            rgba(10, 17, 40, 0.88)
+            rgba(10, 17, 40, 0.75),
+            rgba(10, 17, 40, 0.75)
         ),
-        url("../images/about/restaurant.jpg");
+        url("../images/hero/hero-food.jpg");
 
     background-size: cover;
+
     background-position: center;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
 }
 
-.reservation-hero-content {
+.menu-hero-content {
+    width: 100%;
+
     max-width: 750px;
+
     padding: 30px;
 }
 
-.reservation-hero h1 {
-    font-size: 50px;
-    margin: 0 0 15px;
-}
-
-.reservation-hero p {
-    color: rgba(245, 222, 179, 0.85);
-    font-size: 19px;
-}
-
-
-/* ================================
-   قسم الحجز
-================================ */
-
-.reservation-section {
-    max-width: 1200px;
-    margin: auto;
-
-    padding: 90px 30px;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 60px;
-
-    align-items: center;
-}
-
-
-/* ================================
-   صورة المطعم
-================================ */
-
-.reservation-image img {
-    width: 100%;
-    height: 600px;
-
-    object-fit: cover;
-
-    border-radius: 15px;
-
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
-}
-
-
-/* ================================
-   نموذج الحجز
-================================ */
-
-.reservation-form-container {
-    background: rgb(18, 28, 58);
-
-    padding: 35px;
-
-    border-radius: 15px;
-
-    border: 1px solid rgba(245, 222, 179, 0.08);
-
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
-
-.section-small-title {
+.menu-hero-content .section-small-title {
     color: orange;
 
-    font-size: 16px;
-
-    font-weight: bold;
-
-    margin-bottom: 8px;
-}
-
-.reservation-form-container h2 {
-    font-size: 35px;
-
-    margin: 0 0 10px;
-}
-
-.reservation-form-container > p {
-    color: rgba(245, 222, 179, 0.7);
-
-    margin-bottom: 30px;
-}
-
-
-/* ================================
-   الحقول
-================================ */
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-row {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 15px;
-}
-
-.form-group label {
-    display: block;
-
-    margin-bottom: 8px;
-
-    color: wheat;
+    font-size: 18px;
 
     font-weight: bold;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.menu-hero-content h1 {
+    margin: 15px 0;
+
+    font-size: clamp(38px, 5vw, 55px);
+}
+
+.menu-hero-content p {
+    color: #ddd;
+
+    font-size: clamp(16px, 2vw, 18px);
+}
+
+
+/* ====================
+   Categories
+==================== */
+
+.menu-categories {
+    padding: 35px 30px;
+
+    background: rgb(13, 22, 48);
+
+    position: sticky;
+
+    top: 78px;
+
+    z-index: 900;
+}
+
+.categories-container {
     width: 100%;
 
-    padding: 13px 15px;
+    max-width: 1200px;
 
-    background: rgb(10, 17, 40);
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.category-link {
+    display: inline-block;
+
+    padding: 10px 22px;
+
+    border: 1px solid rgba(245, 222, 179, 0.2);
+
+    border-radius: 30px;
 
     color: wheat;
 
-    border: 1px solid rgba(245, 222, 179, 0.15);
-
-    border-radius: 6px;
-
-    outline: none;
-
-    font-family: inherit;
+    white-space: nowrap;
 
     transition: 0.3s;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: orange;
-
-    box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.1);
-}
-
-.form-group textarea {
-    min-height: 120px;
-
-    resize: vertical;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: rgba(245, 222, 179, 0.4);
-}
-
-
-/* ================================
-   زر تأكيد الحجز
-================================ */
-
-.submit-btn {
-    width: 100%;
-
-    border: none;
-
+.category-link:hover {
     background: orange;
 
     color: rgb(10, 17, 40);
 
-    padding: 14px;
-
-    border-radius: 6px;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.submit-btn:hover {
-    background: wheat;
-
-    transform: translateY(-2px);
+    border-color: orange;
 }
 
 
-/* ================================
-   معلومات المطعم
-================================ */
+/* ====================
+   Menu Section
+==================== */
 
-.reservation-info {
-    background: rgb(13, 22, 48);
+.menu-section {
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: auto;
 
     padding: 80px 30px;
 }
 
-.info-container {
-    max-width: 1200px;
+.menu-category {
+    margin-bottom: 80px;
 
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 30px;
+    scroll-margin-top: 170px;
 }
 
-.info-card {
-    background: rgb(18, 28, 58);
-
-    padding: 30px 25px;
-
-    border-radius: 12px;
-
-    text-align: center;
-
-    border: 1px solid rgba(245, 222, 179, 0.08);
-
-    transition: 0.3s;
-}
-
-.info-card:hover {
-    transform: translateY(-7px);
-
-    border-color: rgba(255, 165, 0, 0.5);
-}
-
-.info-icon {
-    width: 65px;
-    height: 65px;
-
-    margin: 0 auto 20px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 165, 0, 0.12);
-
-    color: orange;
-
+.category-title {
     display: flex;
 
-    justify-content: center;
     align-items: center;
 
-    font-size: 27px;
+    gap: 15px;
+
+    margin-bottom: 30px;
+
+    font-size: clamp(25px, 3vw, 32px);
 }
 
-.info-card h3 {
-    margin-bottom: 10px;
+.category-title::after {
+    content: "";
 
-    font-size: 21px;
-}
+    flex: 1;
 
-.info-card p {
-    color: rgba(245, 222, 179, 0.65);
+    height: 1px;
 
-    margin: 0;
-}
-
-
-/* ================================
-   ملاحظات الحجز
-================================ */
-
-.reservation-note {
-    max-width: 850px;
-
-    margin: 70px auto 0;
-
-    padding: 25px;
-
-    background: rgba(255, 165, 0, 0.08);
-
-    border-right: 4px solid orange;
-
-    border-radius: 6px;
-}
-
-.reservation-note h3 {
-    color: orange;
-
-    margin-top: 0;
-}
-
-.reservation-note p {
-    color: rgba(245, 222, 179, 0.7);
-
-    margin-bottom: 0;
+    background: rgba(245, 222, 179, 0.2);
 }
 
 
-/* ================================
-   CTA
-================================ */
+/* ====================
+   Product Grid
+==================== */
 
-.reservation-cta {
-    padding: 90px 30px;
+.menu-grid {
+    display: grid;
 
-    text-align: center;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
 }
 
-.cta-content {
-    max-width: 700px;
 
-    margin: auto;
+/* ====================
+   Product Card
+==================== */
+
+.menu-card {
+    overflow: hidden;
+
+    background: rgb(18, 28, 58);
+
+    border: 1px solid rgba(245, 222, 179, 0.1);
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+
+    min-width: 0;
 }
 
-.cta-content h2 {
-    font-size: 40px;
+.menu-card:hover {
+    transform: translateY(-8px);
 
-    margin-bottom: 15px;
+    border-color: orange;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
-.cta-content p {
-    color: rgba(245, 222, 179, 0.75);
 
-    margin-bottom: 25px;
+/* ====================
+   Product Image
+==================== */
+
+.menu-card-image {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 230px;
 }
 
-.main-btn {
-    display: inline-block;
+.menu-card-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+.menu-card:hover .menu-card-image img {
+    transform: scale(1.08);
+}
+
+
+/* ====================
+   Product Badge
+==================== */
+
+.menu-badge {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    padding: 6px 12px;
 
     background: orange;
 
     color: rgb(10, 17, 40);
 
-    padding: 13px 30px;
+    border-radius: 20px;
 
-    border-radius: 6px;
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ====================
+   Product Content
+==================== */
+
+.menu-card-content {
+    padding: 22px;
+}
+
+.menu-card-content h3 {
+    margin-bottom: 8px;
+
+    font-size: 21px;
+}
+
+.menu-card-content p {
+    min-height: 50px;
+
+    margin-bottom: 18px;
+
+    color: #ccc;
+
+    font-size: 14px;
+}
+
+
+/* ====================
+   Product Bottom
+==================== */
+
+.menu-card-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.menu-price {
+    color: orange;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+.menu-btn {
+    padding: 9px 16px;
+
+    background: orange;
+
+    color: rgb(10, 17, 40);
+
+    border-radius: 7px;
+
+    font-size: 14px;
 
     font-weight: bold;
 
     transition: 0.3s;
 }
 
-.main-btn:hover {
-    background: wheat;
+.menu-btn:hover {
+    background: #ffb52e;
 
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 
-/* ================================
+/* ====================
+   Special Product
+==================== */
+
+.menu-card.special {
+    border-color: rgba(255, 165, 0, 0.5);
+}
+
+.menu-card.special .menu-badge {
+    background: #ffd166;
+}
+
+
+/* ====================
    Footer
-================================ */
+==================== */
 
-footer {
-    background: rgb(7, 12, 29);
+.footer {
+    background: rgb(6, 11, 27);
 
-    padding: 50px 30px 20px;
+    padding-top: 70px;
 }
 
 .footer-container {
+    width: 100%;
+
     max-width: 1200px;
 
     margin: auto;
 
+    padding: 0 30px 50px;
+
     display: grid;
 
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns:
+        2fr 1fr 1fr 1.5fr;
 
-    gap: 50px;
+    gap: 40px;
 }
 
-.footer-logo {
+.footer-column h3 {
     color: orange;
 
-    font-size: 28px;
-
-    font-weight: bold;
-
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
-footer p {
-    color: rgba(245, 222, 179, 0.65);
+.footer-column p {
+    color: #bbb;
+
+    margin-bottom: 8px;
 }
 
-footer h3 {
-    color: wheat;
+.footer-column a {
+    display: block;
 
-    margin-bottom: 15px;
-}
+    color: #bbb;
 
-footer ul li {
-    margin-bottom: 10px;
-}
-
-footer ul li a {
-    color: rgba(245, 222, 179, 0.7);
+    margin-bottom: 9px;
 
     transition: 0.3s;
 }
 
-footer ul li a:hover {
+.footer-column a:hover {
     color: orange;
+
+    padding-right: 5px;
 }
 
 .footer-bottom {
-    max-width: 1200px;
+    padding: 20px;
 
-    margin: 40px auto 0;
-
-    padding-top: 20px;
-
-    border-top: 1px solid rgba(245, 222, 179, 0.1);
+    border-top:
+        1px solid rgba(245, 222, 179, 0.1);
 
     text-align: center;
+
+    color: #888;
+}
+
+
+/* ================================
+   الشاشات المتوسطة
+================================ */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 18px 25px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .menu-grid {
+        gap: 20px;
+    }
+
+    .footer-container {
+        gap: 25px;
+    }
 }
 
 
@@ -545,26 +603,31 @@ footer ul li a:hover {
 
 @media (max-width: 900px) {
 
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    /*
+       ننزل الروابط إلى سطر مستقل
+       حتى لا تضغط على الشعار والزر
+    */
+
     .nav-links {
-        gap: 15px;
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
     }
 
-    .reservation-section {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-    }
-
-    .reservation-image img {
-        height: 450px;
-    }
-
-    .info-container {
-        grid-template-columns: repeat(2, 1fr);
+    .menu-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
     .footer-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -573,14 +636,195 @@ footer ul li a:hover {
    الجوال
 ================================ */
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 
     .navbar {
         padding: 15px 20px;
 
-        flex-wrap: wrap;
-
         gap: 15px;
+    }
+
+
+    /* ----------------
+       Navigation
+    ---------------- */
+
+    .nav-links {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+
+        order: 3;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+
+        width: 100%;
+
+        padding: 8px 5px;
+
+        text-align: center;
+
+        font-size: 14px;
+
+        border:
+            1px solid
+            rgba(245, 222, 179, 0.08);
+
+        border-radius: 5px;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .nav-links a:hover {
+        background: rgba(255, 165, 0, 0.1);
+
+        border-color:
+            rgba(255, 165, 0, 0.4);
+    }
+
+
+    /* ----------------
+       Order Button
+    ---------------- */
+
+    .order-btn {
+        width: 100%;
+
+        text-align: center;
+
+        order: 4;
+    }
+
+
+    /* ----------------
+       Hero
+    ---------------- */
+
+    .menu-hero {
+        min-height: 350px;
+
+        padding: 45px 15px;
+    }
+
+    .menu-hero-content {
+        padding: 20px 10px;
+    }
+
+    .menu-hero-content h1 {
+        font-size: 40px;
+    }
+
+
+    /* ----------------
+       Categories
+    ---------------- */
+
+    .menu-categories {
+        position: static;
+
+        padding: 25px 15px;
+    }
+
+    .categories-container {
+        gap: 8px;
+    }
+
+    .category-link {
+        padding: 8px 15px;
+
+        font-size: 14px;
+    }
+
+
+    /* ----------------
+       Menu Section
+    ---------------- */
+
+    .menu-section {
+        padding: 60px 20px;
+    }
+
+    .menu-category {
+        margin-bottom: 60px;
+
+        scroll-margin-top: 30px;
+    }
+
+    .category-title {
+        gap: 10px;
+
+        margin-bottom: 25px;
+
+        font-size: 27px;
+    }
+
+
+    /* ----------------
+       Products
+    ---------------- */
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .menu-card-image {
+        height: 240px;
+    }
+
+    .menu-card-content {
+        padding: 20px;
+    }
+
+    .menu-card-content h3 {
+        font-size: 20px;
+    }
+
+    .menu-card-content p {
+        min-height: auto;
+    }
+
+
+    /* ----------------
+       Footer
+    ---------------- */
+
+    .footer {
+        padding-top: 50px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 0 20px 40px;
+    }
+}
+
+
+/* ================================
+   الجوال الصغير
+================================ */
+
+@media (max-width: 450px) {
+
+    .navbar {
+        padding: 14px 15px;
     }
 
     .logo {
@@ -588,79 +832,110 @@ footer ul li a:hover {
     }
 
     .nav-links {
-        width: 100%;
-
-        justify-content: center;
-
-        flex-wrap: wrap;
-
-        gap: 12px;
+        gap: 6px;
     }
 
     .nav-links a {
-        font-size: 14px;
+        font-size: 13px;
+
+        padding: 7px 3px;
     }
 
-    .order-btn {
-        display: none;
+
+    /* Hero */
+
+    .menu-hero {
+        min-height: 300px;
     }
 
-    .reservation-hero {
-        min-height: 320px;
+    .menu-hero-content h1 {
+        font-size: 32px;
     }
 
-    .reservation-hero h1 {
-        font-size: 35px;
-    }
-
-    .reservation-hero p {
+    .menu-hero-content .section-small-title {
         font-size: 16px;
     }
 
-    .reservation-section {
-        padding: 60px 20px;
+
+    /* Categories */
+
+    .menu-categories {
+        padding: 20px 12px;
     }
 
-    .reservation-image img {
-        height: 300px;
+    .category-link {
+        padding: 7px 12px;
+
+        font-size: 13px;
     }
 
-    .reservation-form-container {
-        padding: 25px 20px;
+
+    /* Menu */
+
+    .menu-section {
+        padding: 50px 15px;
     }
 
-    .reservation-form-container h2 {
-        font-size: 30px;
+    .category-title {
+        font-size: 24px;
     }
 
-    .form-row {
+    .menu-card-image {
+        height: 210px;
+    }
+
+    .menu-card-content {
+        padding: 18px;
+    }
+
+
+    /* Product bottom */
+
+    .menu-card-bottom {
+        align-items: stretch;
+    }
+
+    .menu-price {
+        display: flex;
+
+        align-items: center;
+    }
+
+    .menu-btn {
+        padding: 9px 14px;
+    }
+}
+
+
+/* ================================
+   الجوال الصغير جداً
+================================ */
+
+@media (max-width: 360px) {
+
+    .nav-links {
         grid-template-columns: 1fr;
-        gap: 0;
     }
 
-    .reservation-info {
-        padding: 60px 20px;
+    .menu-hero-content h1 {
+        font-size: 28px;
     }
 
-    .info-container {
-        grid-template-columns: 1fr;
+    .category-title {
+        font-size: 22px;
     }
 
-    .reservation-note {
-        margin-top: 50px;
+    .category-title::after {
+        display: none;
     }
 
-    .reservation-cta {
-        padding: 60px 20px;
+    .menu-card-image {
+        height: 190px;
     }
 
-    .cta-content h2 {
-        font-size: 30px;
-    }
+    .menu-btn {
+        flex: 1;
 
-    .footer-container {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
+        text-align: center;
     }
 }

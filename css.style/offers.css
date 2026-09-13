@@ -1,3 +1,4 @@
+
 /* ================================
    إعدادات عامة
 ================================ */
@@ -6,12 +7,17 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background: rgb(10, 17, 40);
     color: wheat;
+    overflow-x: hidden;
 }
 
 a {
@@ -40,37 +46,50 @@ header {
     top: 0;
     z-index: 1000;
 
-    background: rgb(10, 17, 40);
+    background: rgba(10, 17, 40, 0.96);
 
     border-bottom: 1px solid rgba(245, 222, 179, 0.1);
+
+    backdrop-filter: blur(8px);
 }
 
 .navbar {
+    width: 100%;
     max-width: 1200px;
-    margin: auto;
 
+    margin: auto;
     padding: 18px 30px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    gap: 25px;
 }
 
 .logo {
     color: orange;
-    font-size: 30px;
+    font-size: clamp(24px, 3vw, 30px);
     font-weight: bold;
+
+    white-space: nowrap;
 }
 
 .nav-links {
     display: flex;
-    gap: 28px;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(15px, 2.5vw, 28px);
 }
 
 .nav-links a {
     color: wheat;
     font-size: 16px;
+
     transition: 0.3s;
+
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -88,6 +107,8 @@ header {
     font-weight: bold;
 
     transition: 0.3s;
+
+    white-space: nowrap;
 }
 
 .order-btn:hover {
@@ -102,6 +123,8 @@ header {
 
 .offers-hero {
     min-height: 400px;
+
+    padding: 60px 20px;
 
     background:
         linear-gradient(
@@ -121,18 +144,24 @@ header {
 }
 
 .offers-hero-content {
+    width: 100%;
     max-width: 750px;
+
     padding: 30px;
 }
 
 .offers-hero h1 {
-    font-size: 50px;
+    font-size: clamp(35px, 5vw, 50px);
+
     margin: 0 0 15px;
 }
 
 .offers-hero p {
     color: rgba(245, 222, 179, 0.85);
-    font-size: 19px;
+
+    font-size: clamp(16px, 2vw, 19px);
+
+    margin: 0 auto;
 }
 
 
@@ -141,7 +170,9 @@ header {
 ================================ */
 
 .offers-section {
+    width: 100%;
     max-width: 1200px;
+
     margin: auto;
 
     padding: 90px 30px;
@@ -150,18 +181,22 @@ header {
 .section-heading {
     text-align: center;
 
+    width: 100%;
     max-width: 700px;
 
     margin: 0 auto 50px;
 }
 
 .section-heading h2 {
-    font-size: 38px;
+    font-size: clamp(30px, 4vw, 38px);
+
     margin: 0 0 15px;
 }
 
 .section-heading p {
     color: rgba(245, 222, 179, 0.7);
+
+    margin: 0;
 }
 
 
@@ -172,7 +207,7 @@ header {
 .offers-grid {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
     gap: 30px;
 }
@@ -189,6 +224,8 @@ header {
     transition: 0.3s;
 
     position: relative;
+
+    min-width: 0;
 }
 
 .offer-card:hover {
@@ -201,6 +238,7 @@ header {
 
 .offer-card-image {
     position: relative;
+    overflow: hidden;
 }
 
 .offer-card-image img {
@@ -208,6 +246,12 @@ header {
     height: 250px;
 
     object-fit: cover;
+
+    transition: 0.4s;
+}
+
+.offer-card:hover .offer-card-image img {
+    transform: scale(1.05);
 }
 
 .offer-badge {
@@ -225,6 +269,8 @@ header {
 
     font-size: 14px;
     font-weight: bold;
+
+    z-index: 2;
 }
 
 .offer-card-content {
@@ -240,11 +286,11 @@ header {
 .offer-card-content p {
     color: rgba(245, 222, 179, 0.7);
 
-    margin-bottom: 20px;
+    margin: 0 0 20px;
 }
 
 .offer-list {
-    margin-bottom: 25px;
+    margin: 0 0 25px;
 }
 
 .offer-list li {
@@ -272,6 +318,8 @@ header {
     display: flex;
 
     align-items: center;
+
+    flex-wrap: wrap;
 
     gap: 12px;
 
@@ -326,6 +374,7 @@ header {
 ================================ */
 
 .special-offer {
+    width: calc(100% - 60px);
     max-width: 1200px;
 
     margin: 0 auto 90px;
@@ -348,12 +397,13 @@ header {
 }
 
 .special-offer h2 {
-    font-size: 40px;
+    font-size: clamp(30px, 4vw, 40px);
 
-    margin-bottom: 15px;
+    margin: 0 0 15px;
 }
 
 .special-offer p {
+    width: 100%;
     max-width: 650px;
 
     margin: 0 auto 25px;
@@ -395,13 +445,14 @@ header {
 }
 
 .benefits-container {
+    width: 100%;
     max-width: 1200px;
 
     margin: auto;
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
     gap: 30px;
 }
@@ -435,11 +486,13 @@ header {
 .benefit-card h3 {
     font-size: 21px;
 
-    margin-bottom: 10px;
+    margin: 0 0 10px;
 }
 
 .benefit-card p {
     color: rgba(245, 222, 179, 0.65);
+
+    margin: 0;
 }
 
 
@@ -454,21 +507,22 @@ header {
 }
 
 .cta-content {
+    width: 100%;
     max-width: 700px;
 
     margin: auto;
 }
 
 .cta-content h2 {
-    font-size: 40px;
+    font-size: clamp(30px, 4vw, 40px);
 
-    margin-bottom: 15px;
+    margin: 0 0 15px;
 }
 
 .cta-content p {
     color: rgba(245, 222, 179, 0.75);
 
-    margin-bottom: 25px;
+    margin: 0 0 25px;
 }
 
 .main-btn {
@@ -505,6 +559,7 @@ footer {
 }
 
 .footer-container {
+    width: 100%;
     max-width: 1200px;
 
     margin: auto;
@@ -533,7 +588,7 @@ footer p {
 footer h3 {
     color: wheat;
 
-    margin-bottom: 15px;
+    margin: 0 0 15px;
 }
 
 footer ul li {
@@ -551,6 +606,7 @@ footer ul li a:hover {
 }
 
 .footer-bottom {
+    width: 100%;
     max-width: 1200px;
 
     margin: 40px auto 0;
@@ -564,21 +620,53 @@ footer ul li a:hover {
 
 
 /* ================================
+   الأجهزة المتوسطة
+================================ */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 18px 25px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .offers-grid {
+        gap: 20px;
+    }
+
+    .footer-container {
+        gap: 30px;
+    }
+}
+
+
+/* ================================
    الأجهزة اللوحية
 ================================ */
 
 @media (max-width: 900px) {
 
+    .navbar {
+        flex-wrap: wrap;
+    }
+
     .nav-links {
-        gap: 15px;
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
     }
 
     .offers-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .benefits-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .footer-container {
@@ -596,8 +684,6 @@ footer ul li a:hover {
     .navbar {
         padding: 15px 20px;
 
-        flex-wrap: wrap;
-
         gap: 15px;
     }
 
@@ -605,26 +691,70 @@ footer ul li a:hover {
         font-size: 25px;
     }
 
+    /*
+       جعل روابط القائمة مرتبة
+       بدل أن تتكدس بشكل عشوائي
+    */
+
     .nav-links {
         width: 100%;
 
-        justify-content: center;
+        display: grid;
 
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        gap: 12px;
+        gap: 8px;
+
+        order: 3;
+    }
+
+    .nav-links li {
+        width: 100%;
     }
 
     .nav-links a {
+        display: block;
+
+        width: 100%;
+
+        padding: 8px 5px;
+
+        text-align: center;
+
         font-size: 14px;
+
+        border: 1px solid rgba(245, 222, 179, 0.08);
+
+        border-radius: 5px;
+
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        background: rgba(255, 165, 0, 0.1);
+
+        border-color: rgba(255, 165, 0, 0.4);
     }
 
     .order-btn {
-        display: none;
+        width: 100%;
+
+        text-align: center;
+
+        order: 4;
     }
+
+
+    /* Hero */
 
     .offers-hero {
         min-height: 320px;
+
+        padding: 45px 15px;
+    }
+
+    .offers-hero-content {
+        padding: 20px 10px;
     }
 
     .offers-hero h1 {
@@ -635,24 +765,49 @@ footer ul li a:hover {
         font-size: 16px;
     }
 
+
+    /* قسم العروض */
+
     .offers-section {
         padding: 60px 20px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
     }
 
     .section-heading h2 {
         font-size: 30px;
     }
 
+
+    /* بطاقات العروض */
+
     .offers-grid {
         grid-template-columns: 1fr;
+
+        gap: 25px;
     }
 
     .offer-card-image img {
         height: 230px;
     }
 
+    .offer-card-content {
+        padding: 22px;
+    }
+
+    .offer-card-content h3 {
+        font-size: 22px;
+    }
+
+
+    /* العرض المميز */
+
     .special-offer {
-        margin: 0 20px 60px;
+        width: calc(100% - 40px);
+
+        margin: 0 auto 60px;
 
         padding: 45px 20px;
     }
@@ -661,25 +816,5 @@ footer ul li a:hover {
         font-size: 30px;
     }
 
-    .offer-benefits {
-        padding: 60px 20px;
-    }
 
-    .benefits-container {
-        grid-template-columns: 1fr;
-    }
-
-    .offers-cta {
-        padding: 60px 20px;
-    }
-
-    .cta-content h2 {
-        font-size: 30px;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-    }
 }
